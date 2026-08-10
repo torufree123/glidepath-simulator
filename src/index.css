@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Noto Sans JP", "Hiragino Sans", "Hiragino Kaku Gothic ProN", "Yu Gothic UI", system-ui, -apple-system, "Segoe UI", sans-serif;
+  /* dataviz 参照パレット(light) */
+  --color-page: #f9f9f7;
+  --color-surface: #fcfcfb;
+  --color-ink: #0b0b0b;
+  --color-ink2: #52514e;
+  --color-muted: #898781;
+  --color-grid: #e1e0d9;
+  --color-baseline: #c3c2b7;
+  --color-accent: #2a78d6;
+  --color-accent-deep: #1c5cab;
+  --color-s1: #2a78d6;
+  --color-s2: #eb6834;
+  --color-s3: #1baf7a;
+  --color-s4: #eda100;
+  --color-s5: #e87ba4;
+  --color-s6: #008300;
+  --color-s7: #4a3aa7;
+  --color-s8: #e34948;
+  --color-good: #0ca30c;
+  --color-goodtext: #006300;
+  --color-warn: #fab219;
+  --color-serious: #ec835a;
+  --color-critical: #d03b3b;
+  --color-seq250: #86b6ef;
+}
+
+html {
+  color-scheme: light;
+}
+
+body {
+  background-color: var(--color-page);
+  color: var(--color-ink);
+  -webkit-font-smoothing: antialiased;
+  font-feature-settings: "palt";
+}
+
+.tnum {
+  font-variant-numeric: tabular-nums;
+}
+
+/* range input */
+input[type='range'] {
+  accent-color: var(--color-accent);
+}
+
+/* 細いスクロールバー */
+.thin-scroll::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+.thin-scroll::-webkit-scrollbar-thumb {
+  background: var(--color-baseline);
+  border-radius: 4px;
+}
+
+/* ---------------- 印刷レポート(FR-REP-01/02) ---------------- */
+@page {
+  size: A4;
+  margin: 13mm;
+}
+
+@media print {
+  body.report-printing {
+    background: #fff;
+  }
+  body.report-printing #app-root {
+    display: none !important;
+  }
+  body.report-printing #report-view {
+    position: static !important;
+    inset: auto !important;
+    overflow: visible !important;
+    background: #fff !important;
+    padding: 0 !important;
+  }
+  body.report-printing #report-view .report-sheet {
+    box-shadow: none !important;
+    margin: 0 auto !important;
+    width: 100% !important;
+    max-width: none !important;
+  }
+  .no-print {
+    display: none !important;
+  }
+  .print-break-avoid {
+    break-inside: avoid;
+  }
+}
