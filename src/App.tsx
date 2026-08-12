@@ -28,10 +28,7 @@ function Header() {
   return (
     <header className="flex h-[54px] shrink-0 items-center gap-4 border-b border-ink/10 bg-surface px-4">
       <div className="flex items-center gap-2.5">
-        <svg width="26" height="26" viewBox="0 0 32 32" aria-hidden>
-          <rect width="32" height="32" rx="7" fill="#2a78d6" />
-          <path d="M6 8h8c0 8-2 16 12 16" stroke="#fff" strokeWidth="3" fill="none" strokeLinecap="round" />
-        </svg>
+        <img src="/logo-ink.png" alt="" className="h-8 w-auto shrink-0" />
         <div>
           <h1 className="text-[14px] font-bold leading-4 text-ink">グライドパス・シミュレーター</h1>
           <p className="text-[9.5px] leading-3 text-muted">Glide Path Simulation Tool v{ENGINE_VERSION}(仕様書 v0.1 準拠)</p>
